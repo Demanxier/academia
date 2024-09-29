@@ -1,5 +1,6 @@
 package me.dio.academia.digital.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -30,6 +31,7 @@ public class Aluno {
 
   private String bairro;
 
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
   private LocalDate dataDeNascimento;
 
   //fetch = FetchType.LAZY --> Para não retornar as Avaliações quando buscar todos os alunos
